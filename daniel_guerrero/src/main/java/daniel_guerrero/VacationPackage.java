@@ -2,20 +2,21 @@
 // All rights reserved
 package daniel_guerrero;
 public class VacationPackage {
-	private String destination;
-    private int numTravelers;
-    private int duration;
-
+	final private String destination;
+    final private int numTravelers;
+    final private int duration;
+    final private int addon;
     /**
      * Constructor de la clase VacationPackage.
      * @param destination   El destino de la vacación.
      * @param numTravelers  El número de viajeros.
      * @param duration      La duración de la vacación en días.
      */
-    public VacationPackage(String destination, int numTravelers, int duration) {
+    public VacationPackage(String destination, int numTravelers, int duration, int addon) {
         this.destination = destination;
         this.numTravelers = numTravelers;
         this.duration = duration;
+        this.addon = addon;
     }
 
     public String getDestination() {
@@ -28,6 +29,10 @@ public class VacationPackage {
 
     public int getDuration() {
         return duration;
+    }
+    
+    public int getAddon() {
+    	return addon;
     }
 }
 

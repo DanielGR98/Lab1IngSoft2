@@ -5,8 +5,8 @@ package daniel_guerrero;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class Main {
-	private static final HashSet<String> VALID_DESTINATIONS = new HashSet<String>();
+public class Main { //NOPMD
+	private static final HashSet<String> VALID_DESTINATIONS = new HashSet<String>(); //NOPMD
 
     static {
         VALID_DESTINATIONS.add("Paris");
@@ -39,7 +39,14 @@ public class Main {
         System.out.print("Enter the duration of the vacation in days: ");
         int duration = scanner.nextInt();
         builder.setDuration(duration);
-
+        
+        // Get user input for duration of the vacation
+        System.out.print("1 All-Inclusive Package - $200 per traveler\r\n"
+        		+ "2 Adventure Activities Package - $150 per traveler\r\n"
+        		+ "3 Spa and Wellness Package - $100 per traveler\r\n Option:");
+        int addons = scanner.nextInt();
+        builder.setAddon(addons);
+        
         VacationPackage vacationPackage = builder.build();
 
         int totalCost = VacationPackageCalculator.calculateTotalCost(vacationPackage);

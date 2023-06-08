@@ -6,6 +6,7 @@ public class VacationPackageBuilder {
 	private String destination;
     private int numTravelers;
     private int duration;
+    private int addon;
     
     /**
      * Establece el destino de la vacación.
@@ -41,11 +42,21 @@ public class VacationPackageBuilder {
     }
     
     /**
+     * Establece tipo de paquete para el viaje.
+     *
+     * @param addon Tipo de paquete de viaje.
+     * @return El propio objeto VacationPackageBuilder para permitir el encadenamiento de llamadas.
+     */
+    public VacationPackageBuilder setAddon(int addon) {
+        this.addon = addon;
+        return this;
+    }
+    /**
      * Construye y devuelve un objeto de la clase VacationPackage con los valores especificados.
      *
      * @return Un objeto de la clase VacationPackage con los valores de los atributos destination, numTravelers y duration.
      */
     public VacationPackage build() {
-        return new VacationPackage(destination, numTravelers, duration);
+        return new VacationPackage(destination, numTravelers, duration, addon);
     }
 }
